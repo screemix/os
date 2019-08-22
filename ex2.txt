@@ -1,6 +1,0 @@
-   15  ls > ex1.txt /usr/bin | grep "gcc"
-   16  rm <ex1.txt>
-   17  rm ex1.txt
-   18  touch ex1.txt
-   19  ls /usr/bin | grep "gcc" > ex1.txt
-   20  history > ex2.txt
