@@ -6,7 +6,11 @@
 int main()
 {
     char s[1024];
-    scanf("%s", s);
-    system(s);
-    return 0;
+    fork();
+    fgets(s, sizeof(s), stdin);
+    while(1) {
+        printf("$ ");
+        system(s);
+        fgets(s, sizeof(s), stdin);
+    }
 }
