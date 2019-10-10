@@ -1,0 +1,3 @@
+Physical address is about the real address which exists in some memory unit.
+Virtual address is used by process as a reference to some unit in a physical memory space.
+Virtual addresses could be the same as physical addresses, but could be different as well and in this case virtual address is mapping somehow into the physical address.

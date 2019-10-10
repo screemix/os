@@ -1,0 +1,4 @@
+8 Kb = 2ˆ13 bits
+Offset = 13
+16 - 13 = 3
+2ˆ3 = 8 entries are needed
