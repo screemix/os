@@ -3,6 +3,7 @@
 #include <string.h>
 #include <sys/resource.h>
 #include <stdio.h>
+#include <limits.h>
 
 int main(){
     int n, miss, hit; // n - amount of pages frames in physical memory
@@ -12,7 +13,7 @@ int main(){
     hit = 0;
 
     int * mem = (int*)(malloc(sizeof(int)*n)); // an array for page frames
-    int * ages = (int*)(malloc(sizeof(int)*n)); // array of ages of page frames
+    long long * ages = (long long*)(malloc(sizeof(long long)*n)); // array of ages of page frames
     memset(ages, 0, n); // initially all of them are 0
 
     FILE *file;
@@ -33,7 +34,7 @@ int main(){
         /* if there is no needed page in physical memory */
         if (miss_page == 1){
             miss += 1;
-            int min = ages[0];
+            long long min = ages[0];
             int min_index = 0;
 
             /* finding the oldest page in memory*/
@@ -44,12 +45,12 @@ int main(){
                 }
             }
             mem[min_index] = new_page;
-            ages[min_index] = ages[min_index] | (1 << 7);
+            ages[min_index] = ages[min_index] | ((long long)1 << 62) ;
         }
-        /* if there is needed page in memory*/
+            /* if there is needed page in memory*/
         else {
             hit += 1;
-            ages[index] = ages[index] | (1 << 7);
+            ages[index] = ages[index] | ((long long)1 << 62);
         }
         /* updating all ages*/
         for (int i = 0; i < n; i++){
@@ -59,7 +60,7 @@ int main(){
         }
     }
     fclose(file);
-    //printf("%d %d ", hit, miss);
+    printf("%d %d ", hit, miss);
     double ratio = (double)hit/(double)miss;
     printf("%s %lf \n", "Hit/miss ratio: ", ratio);
     return 0;
