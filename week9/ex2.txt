@@ -1,0 +1,5 @@
+1) With page frame for example = 5 we can get increased ratio in case when we reference many repeated pages:
+1 2 2 3 3 1 2 2 3 1 (only 5 misses)
+2) with the same page frame size we can decrease ratio referencing consequently to the different pages:
+1 23 4 5 65 3 890 11 12 34 (same sequence size, but already 10 misses) 
+This idea used in working set algorithm (that we often reference the same pages included in working set).
