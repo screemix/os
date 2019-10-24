@@ -1,0 +1,4 @@
+/Users/admin/Desktop/Current/OS/LABS/week1/file.txt
+/Users/admin/Desktop/Current/OS/LABS/week10/_ex2.txt
+
+After MacBook-Air-admin:week10 admin$ find /Users/admin/Desktop/Current/OS/LABS -inum 8626039089 -exec rm {} \; command, command find displayed nothing

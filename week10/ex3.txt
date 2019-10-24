@@ -1,0 +1,10 @@
+After removing execute permission for everybody:
+-rw-rw-rw-  1 admin  staff  0 23 окт 12:35 _ex3.txt
+After granting all permissions to owner and others (not group):
+-rwxrw-rwx  1 admin  staff  0 23 окт 12:35 _ex3.txt
+After G permissions made equal to U permissions:
+-rwxrwxrwx  1 admin  staff  0 23 окт 12:35 _ex3.txt
+
+660 for ex3.txt: (-rw-rw----), e. g. owner and group can read and write, other aren't able to do anything
+775 for ex3.txt (-rwxrwxr-x), e. g. owner and group can do all rwx operations, other can read and execute
+777 for ex3.txt all users can read, write and execute
