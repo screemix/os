@@ -1,0 +1,1 @@
+\n character cleans the buffer. That is why in 1st version after forking we have non-empty buffer and it prints "hello" twice. The opposite happens in 2nd version - first printf prints and cleans buffer so in the child process we just print(\n).
